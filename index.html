@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Field Map — The future of conversions.</title>
+    <meta
+      name="description"
+      content="Map payroll HCM extract shapes to UKG Pro Launch People Profiles load files. One bot, one app."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&family=Syne:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="hero">
+      <div class="hero-glow" aria-hidden="true"></div>
+      <div class="wrap">
+        <h1 class="brand">Field <span>Map</span></h1>
+        <p class="tagline">The future of conversions.</p>
+        <p class="lede">
+          One bot / one app: map payroll HCM extract shapes into UKG Pro Launch
+          People Profiles load files—without inventing tax codes.
+        </p>
+        <div class="hero-cta">
+          <a class="btn btn-primary" href="#workspace">Start mapping</a>
+          <a class="btn btn-ghost" href="#download">See downloads</a>
+        </div>
+        <p class="hero-meta">
+          Extract shapes · SAP · ADP · UKG · Smaller shop / Other → Launch load
+          files
+        </p>
+        <nav class="steps" aria-label="Workflow steps">
+          <div class="step is-active" data-step="1">
+            <strong>1 · Source</strong>
+            Pick extract shape
+          </div>
+          <div class="step" data-step="2">
+            <strong>2 · Load</strong>
+            Drop CSV or demo
+          </div>
+          <div class="step" data-step="3">
+            <strong>3 · Map</strong>
+            Fix field map
+          </div>
+          <div class="step" data-step="4">
+            <strong>4 · Download</strong>
+            Launch files out
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <main id="workspace" class="workspace wrap">
+      <section class="panel" id="step-source" aria-labelledby="source-heading">
+        <p class="panel-label">Step 1</p>
+        <h2 id="source-heading">Pick your extract shape</h2>
+        <p class="panel-desc">
+          Sources are file shapes (flat extracts), not live vendor APIs. Choose
+          the layout that matches your CSV headers.
+        </p>
+        <div class="source-grid" role="radiogroup" aria-label="Source extract shape">
+          <button type="button" class="source-opt is-selected" data-source="sap" aria-pressed="true">
+            SAP
+            <small>Flat HCM export · PERNR, NACHN, WERKS…</small>
+          </button>
+          <button type="button" class="source-opt" data-source="adp" aria-pressed="false">
+            ADP
+            <small>Workforce Now–style · File #, Assoc ID…</small>
+          </button>
+          <button type="button" class="source-opt" data-source="ukg" aria-pressed="false">
+            UKG
+            <small>Near-passthrough into Launch headers</small>
+          </button>
+          <button type="button" class="source-opt" data-source="other" aria-pressed="false">
+            Smaller shop / Other
+            <small>Generic payroll CSV · Employee ID…</small>
+          </button>
+        </div>
+      </section>
+
+      <section class="panel" id="step-load" aria-labelledby="load-heading">
+        <p class="panel-label">Step 2</p>
+        <h2 id="load-heading">Drop CSV or load demo</h2>
+        <p class="panel-desc">
+          Load a per-source demo (includes at least one BLOCKED row for missing
+          work/resident state) or drop your own extract.
+        </p>
+        <div class="dropzone" id="dropzone">
+          <p>Drop a CSV extract here</p>
+          <div class="load-row">
+            <button type="button" class="btn btn-ghost" id="browse-btn">Browse file</button>
+            <input type="file" class="file-input" id="file-input" accept=".csv,text/csv" />
+          </div>
+          <span class="or">or</span>
+          <button type="button" class="btn btn-primary" id="demo-btn">Load demo for selected source</button>
+          <div class="file-chip hidden" id="file-chip" aria-live="polite"></div>
+        </div>
+      </section>
+
+      <section class="panel hidden" id="step-map" aria-labelledby="map-heading">
+        <p class="panel-label">Step 3</p>
+        <h2 id="map-heading">Source → Launch field map</h2>
+        <p class="panel-desc">
+          Auto-mapped from known aliases. Edit any dropdown. Missing Work-In or
+          Resident SIT inputs stay unmapped—never invented.
+        </p>
+        <div class="map-shell">
+          <table class="map-table" id="map-table">
+            <thead>
+              <tr>
+                <th scope="col">UKG Launch target</th>
+                <th scope="col">Source column</th>
+                <th scope="col">Status</th>
+              </tr>
+            </thead>
+            <tbody id="map-body"></tbody>
+          </table>
+        </div>
+        <div class="stats" id="map-stats"></div>
+        <p class="preview-note" id="preview-note"></p>
+      </section>
+
+      <section class="panel hidden" id="download" aria-labelledby="download-heading">
+        <p class="panel-label">Step 4</p>
+        <h2 id="download-heading">Download Launch files</h2>
+        <p class="panel-desc">
+          Three artifacts: the field map, People Profiles in Launch column
+          order, and an exceptions log. Rows missing Work-In or Resident SIT
+          state are <strong>BLOCKED</strong>—codes are never invented.
+        </p>
+        <div class="download-actions">
+          <button type="button" class="btn btn-primary" id="dl-map">Download field map CSV</button>
+          <button type="button" class="btn btn-ghost" id="dl-people">Download 01_People_Profiles.csv</button>
+          <button type="button" class="btn btn-ghost" id="dl-exceptions">Download exceptions.csv</button>
+        </div>
+        <div class="stats" id="download-stats"></div>
+        <ul class="exception-list" id="exception-list"></ul>
+        <p class="law-note">
+          Hard rule: Work-In SIT Code and Resident SIT Code are derived only
+          from source state/province fields when present. Empty or unmapped
+          state → status BLOCKED in exceptions. No synthetic tax jurisdiction
+          codes.
+        </p>
+      </section>
+    </main>
+
+    <footer class="footer wrap">
+      <p>
+        Field Map · extract shapes to UKG Pro Launch · MIT ·
+        <a href="https://github.com/sambama95-blip/shiny-octo-spork">source</a>
+      </p>
+    </footer>
+
+    <script src="app.js"></script>
+  </body>
+</html>

@@ -1,0 +1,4 @@
+Company Code,File #,Assoc ID,Last Name,First Name,SSN,Birth Date,Rate,Annual Salary,Job Code,Pay Group,Worked In State,Lived In State,Address 1,City,State,ZIP,Country,Work Email,Gender,Marital Status,Full/Part,Federal Filing Status,Federal Exemptions,Pay Type,Department
+ACME,000145,A145,Chen,Laura,***-**-4412,1990-06-18,52.00,,OPS-12,WK,NY,NY,40 Broad St,New York,NY,10004,US,laura.chen@example.com,F,S,F,S,1,H,Operations
+ACME,000146,A146,Williams,Jordan,***-**-8821,1987-11-02,,78000,FIN-03,BW,NJ,NJ,1 Gateway Ctr,Newark,NJ,07102,US,jordan.williams@example.com,M,M,F,M,2,S,Finance
+ACME,000147,A147,Okoye,Ada,***-**-1190,1993-03-29,41.25,,CS-07,WK,,,500 Peachtree,Atlanta,GA,30308,US,ada.okoye@example.com,F,S,P,S,0,H,Support

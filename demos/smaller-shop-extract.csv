@@ -1,0 +1,4 @@
+Company Code,Employee ID,First Name,Last Name,SSN,Birth Date,Work State,Home State,Hourly Rate,Annual Salary,Job Code,Pay Group,Address,City,State,ZIP,Country,Email,Gender,F/P,Federal Filing Status,Federal Exemptions,Pay Type,Department
+SHOP1,EE-201,Chris,Morales,***-**-5502,1994-08-21,FL,FL,28.75,,CLK-01,WK,900 Ocean Dr,Miami,FL,33139,US,chris.morales@example.com,M,F,S,1,H,Store
+SHOP1,EE-202,Priya,Singh,***-**-6611,1988-02-11,GA,GA,,64000,ADM-03,BW,100 Peachtree St,Atlanta,GA,30303,US,priya.singh@example.com,F,F,M,2,S,Admin
+SHOP1,EE-203,Marcus,Lee,***-**-9022,1990-10-05,,,36.00,,TECH-02,WK,12 River Rd,Portland,OR,97201,US,marcus.lee@example.com,M,F,S,0,H,Tech
