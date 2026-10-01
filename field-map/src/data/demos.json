@@ -1,0 +1,30 @@
+[
+  {
+    "id": "sap",
+    "label": "SAP demo extract",
+    "filename": "sap-demo-extract.csv",
+    "note": "Synthetic SAP-style columns. Wage/tax codes are sample literals from the file — not invented at map time.",
+    "csv": "PERNR,BUKRS,WERKS,BEGDA,ENDDA,LGART,BETRG,ANZHL,WAERS,STCD1\n100234,1000,US01,20260301,20260315,1000,2450.00,80,USD,TX-FED\n100234,1000,US01,20260301,20260315,2000,180.50,,USD,\n100891,1000,US02,20260301,20260315,1000,3120.00,80,USD,TX-FED\n100891,1000,US02,20260301,20260315,M230,95.00,,USD,TX-STATE\n"
+  },
+  {
+    "id": "adp",
+    "label": "ADP demo extract",
+    "filename": "adp-demo-extract.csv",
+    "note": "Synthetic ADP Workforce Now-style export. Earnings and deduction codes stay pass-through.",
+    "csv": "File Number,Associate ID,Pay Date,Earnings Code,Hours,Rate,Earnings Amount,Deduction Code,Deduction Amount,Department,Tax Jurisdiction\n00421,A-8821,2026-03-13,REG,80,28.50,2280.00,401K,114.00,OPS,US-FED\n00421,A-8821,2026-03-13,OT,6,42.75,256.50,,,OPS,US-FED\n00510,A-9102,2026-03-13,REG,80,34.00,2720.00,MED,145.00,FIN,US-CA\n00510,A-9102,2026-03-13,BONUS,, ,500.00,,,FIN,US-CA\n"
+  },
+  {
+    "id": "ukg",
+    "label": "UKG demo extract",
+    "filename": "ukg-demo-extract.csv",
+    "note": "Synthetic UKG-style person/pay rows. Pay and job codes are source values only.",
+    "csv": "Employee Number,Person ID,Pay Period End,Pay Code,Hours,Amount,Org Level 1,Org Level 2,Job Code,Tax Code\nE-1022,P7781,2026-03-14,REG,72,2160.00,Warehouse,East,JC-WH,FED\nE-1022,P7781,2026-03-14,PTO,8,240.00,Warehouse,East,JC-WH,FED\nE-2044,P8012,2026-03-14,REG,80,3600.00,Sales,West,JC-AE,CA-SIT\nE-2044,P8012,2026-03-14,COMM,,420.00,Sales,West,JC-AE,CA-SIT\n"
+  },
+  {
+    "id": "smaller",
+    "label": "Smaller shop demo",
+    "filename": "smaller-shop-demo.csv",
+    "note": "Generic boutique-processor style CSV. Tax setup codes only appear when present in the file.",
+    "csv": "employee_id,employee_name,pay_date,earn_code,hours,gross_pay,dept,location,tax_setup,notes\nS-11,Riley Chen,2026-03-12,REG,40,1600.00,Studio,Main,STD-FED,Week 10\nS-11,Riley Chen,2026-03-12,TIP,,220.00,Studio,Main,,\nS-18,Jordan Lee,2026-03-12,REG,38,1520.00,Front,Main,STD-FED,\nS-22,Sam Ortiz,2026-03-12,CONTRACT,,900.00,Ops,Remote,,Invoice batch B\n"
+  }
+]
