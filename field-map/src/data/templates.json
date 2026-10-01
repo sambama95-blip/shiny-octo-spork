@@ -1,0 +1,249 @@
+[
+  {
+    "id": "sap",
+    "name": "SAP HCM extract → load",
+    "blurb": "Common SAP payroll extract columns into a flat load template. Tax / wage type codes stay as provided.",
+    "fields": [
+      {
+        "key": "PERNR",
+        "label": "Personnel number",
+        "required": true,
+        "hint": "Employee ID / PERNR"
+      },
+      {
+        "key": "BUKRS",
+        "label": "Company code",
+        "required": true
+      },
+      {
+        "key": "WERKS",
+        "label": "Personnel area",
+        "required": false
+      },
+      {
+        "key": "BEGDA",
+        "label": "Begin date",
+        "required": true,
+        "hint": "YYYYMMDD or ISO"
+      },
+      {
+        "key": "ENDDA",
+        "label": "End date",
+        "required": false
+      },
+      {
+        "key": "LGART",
+        "label": "Wage type",
+        "required": true,
+        "neverInvent": true,
+        "hint": "Must exist in source — never invent"
+      },
+      {
+        "key": "BETRG",
+        "label": "Amount",
+        "required": true
+      },
+      {
+        "key": "ANZHL",
+        "label": "Number / hours",
+        "required": false
+      },
+      {
+        "key": "WAERS",
+        "label": "Currency",
+        "required": false
+      },
+      {
+        "key": "TAX_CODE",
+        "label": "Tax code",
+        "required": false,
+        "neverInvent": true,
+        "hint": "Pass-through only"
+      }
+    ]
+  },
+  {
+    "id": "adp",
+    "name": "ADP Workforce Now → load",
+    "blurb": "ADP-style export into a load-ready flat file. Earnings and deduction codes are never synthesized.",
+    "fields": [
+      {
+        "key": "FileNumber",
+        "label": "File number",
+        "required": true
+      },
+      {
+        "key": "AssociateID",
+        "label": "Associate ID",
+        "required": false
+      },
+      {
+        "key": "PayDate",
+        "label": "Pay date",
+        "required": true
+      },
+      {
+        "key": "EarningsCode",
+        "label": "Earnings code",
+        "required": true,
+        "neverInvent": true
+      },
+      {
+        "key": "Hours",
+        "label": "Hours",
+        "required": false
+      },
+      {
+        "key": "Rate",
+        "label": "Rate",
+        "required": false
+      },
+      {
+        "key": "EarningsAmount",
+        "label": "Earnings amount",
+        "required": true
+      },
+      {
+        "key": "DeductionCode",
+        "label": "Deduction code",
+        "required": false,
+        "neverInvent": true
+      },
+      {
+        "key": "DeductionAmount",
+        "label": "Deduction amount",
+        "required": false
+      },
+      {
+        "key": "Department",
+        "label": "Department",
+        "required": false
+      },
+      {
+        "key": "TaxJurisdiction",
+        "label": "Tax jurisdiction",
+        "required": false,
+        "neverInvent": true
+      }
+    ]
+  },
+  {
+    "id": "ukg",
+    "name": "UKG Pro / Dimensions → load",
+    "blurb": "UKG-style person and pay components mapped to a load template. Setup codes stay source-faithful.",
+    "fields": [
+      {
+        "key": "EmployeeNumber",
+        "label": "Employee number",
+        "required": true
+      },
+      {
+        "key": "PersonID",
+        "label": "Person ID",
+        "required": false
+      },
+      {
+        "key": "PayPeriodEnd",
+        "label": "Pay period end",
+        "required": true
+      },
+      {
+        "key": "PayCode",
+        "label": "Pay code",
+        "required": true,
+        "neverInvent": true
+      },
+      {
+        "key": "Hours",
+        "label": "Hours",
+        "required": false
+      },
+      {
+        "key": "Amount",
+        "label": "Amount",
+        "required": true
+      },
+      {
+        "key": "OrgLevel1",
+        "label": "Org level 1",
+        "required": false
+      },
+      {
+        "key": "OrgLevel2",
+        "label": "Org level 2",
+        "required": false
+      },
+      {
+        "key": "JobCode",
+        "label": "Job code",
+        "required": false,
+        "neverInvent": true
+      },
+      {
+        "key": "TaxCode",
+        "label": "Tax code",
+        "required": false,
+        "neverInvent": true
+      }
+    ]
+  },
+  {
+    "id": "smaller",
+    "name": "Smaller shop CSV → load",
+    "blurb": "Generic time/pay export for boutique processors and in-house ledgers. Explicit fields only.",
+    "fields": [
+      {
+        "key": "employee_id",
+        "label": "Employee ID",
+        "required": true
+      },
+      {
+        "key": "employee_name",
+        "label": "Employee name",
+        "required": false
+      },
+      {
+        "key": "pay_date",
+        "label": "Pay date",
+        "required": true
+      },
+      {
+        "key": "earn_code",
+        "label": "Earn code",
+        "required": true,
+        "neverInvent": true
+      },
+      {
+        "key": "hours",
+        "label": "Hours",
+        "required": false
+      },
+      {
+        "key": "gross_pay",
+        "label": "Gross pay",
+        "required": true
+      },
+      {
+        "key": "dept",
+        "label": "Department",
+        "required": false
+      },
+      {
+        "key": "location",
+        "label": "Location",
+        "required": false
+      },
+      {
+        "key": "tax_setup",
+        "label": "Tax setup code",
+        "required": false,
+        "neverInvent": true
+      },
+      {
+        "key": "notes",
+        "label": "Notes",
+        "required": false
+      }
+    ]
+  }
+]

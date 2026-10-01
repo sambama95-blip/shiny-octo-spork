@@ -1,0 +1,7 @@
+Soft-gate preview password (shared demo access):
+
+JgB7vknTwDppGYma
+
+This unlocks the Field Map UI for private demos. It is not an account login.
+Paid unlock for production People_* extracts is configured separately in
+src/access-config.ts (paidUnlockPassword — empty until PayPal clears).
