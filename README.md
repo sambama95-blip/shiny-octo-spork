@@ -25,18 +25,28 @@ Each shipped demo includes at least one BLOCKED row so implementers can see the 
 
 ## Open the app
 
-### GitHub Pages (preferred once enabled)
+### Vercel (preferred)
 
-After this branch is merged (or Pages is pointed at `main` / `docs` / workflow):
+This repo is a **static site** at the repo root (`index.html`, `app.js`, `styles.css`, `demos/`). No build step. `vercel.json` sets trailing-slash policy and short-lived cache headers for demo CSVs.
 
-**https://sambama95-blip.github.io/shiny-octo-spork/**
+**Connect once (GitHub → Vercel):**
 
-Enable Pages (one-time, repo Settings → Pages):
+1. Open [vercel.com/new](https://vercel.com/new) and sign in with GitHub (account that can access `sambama95-blip/shiny-octo-spork`).
+2. **Import** → select **sambama95-blip/shiny-octo-spork**.
+3. Framework Preset: **Other** (or leave blank). Root Directory: `.` (repo root). Build Command: leave empty. Output Directory: leave empty (static root).
+4. Click **Deploy**. Production URL will look like `https://shiny-octo-spork.vercel.app` (or your chosen project name).
+5. Optional: Project → **Settings → Domains** for a custom domain; Project → **Settings → Git** to confirm the production branch (`main` after merge, or preview deployments from this PR branch).
 
-1. Open [Settings → Pages](https://github.com/sambama95-blip/shiny-octo-spork/settings/pages).
-2. Under **Build and deployment**, set **Source** to **GitHub Actions**.
-3. Merge the PR that includes `.github/workflows/pages.yml` (or run the workflow from the Actions tab).
-4. Wait for the **Deploy Field Map to GitHub Pages** workflow to finish; open the URL above.
+**CLI (after `vercel login`):**
+
+```bash
+# from repo root — preview
+npx vercel
+# production
+npx vercel --prod
+```
+
+Do **not** invent or commit tokens. Use dashboard OAuth or your own `VERCEL_TOKEN` locally.
 
 ### Local (no deploy)
 
@@ -47,6 +57,14 @@ python3 -m http.server 8080
 ```
 
 Or open `index.html` via any static file server. Demo fetch works over `http://`; embedded demos also load if fetch fails.
+
+### GitHub Pages (optional alternate)
+
+**https://sambama95-blip.github.io/shiny-octo-spork/**
+
+1. Open [Settings → Pages](https://github.com/sambama95-blip/shiny-octo-spork/settings/pages).
+2. **Build and deployment → Source** = **GitHub Actions**.
+3. Merge (or run) the workflow in `.github/workflows/pages.yml`.
 
 ### Repo
 
@@ -60,7 +78,8 @@ https://github.com/sambama95-blip/shiny-octo-spork
 | `app.js` | CSV parse, auto-map aliases, SIT BLOCKED law, downloads |
 | `styles.css` | Charcoal `#0e0f12` + soft teal `#5b9a9a` |
 | `demos/*.csv` | Four source demos (each with a BLOCKED row) |
-| `.github/workflows/pages.yml` | GitHub Pages deploy |
+| `vercel.json` | Vercel static site config (preferred host) |
+| `.github/workflows/pages.yml` | Optional GitHub Pages deploy |
 
 ## Launch targets (People Profiles)
 
