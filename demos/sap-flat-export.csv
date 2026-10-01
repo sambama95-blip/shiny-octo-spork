@@ -1,0 +1,4 @@
+Personnel Number,Last Name,First Name,Birth Date,Company Code,Personnel Area,Personnel Subarea,Pay Scale Type,Job Code,Pay Group,Annual Salary,Hourly Rate,Street,City,State,Postal Code,Country,Email,Lived In State,Gender,Marital Status,Full/Part Time,Federal Filing Status,Federal Exemptions
+1002341,Nguyen,Mai,1988-04-12,1000,TX,HOU1,H,ENG-04,BW,92000,,1200 Main St,Houston,TX,77002,US,mai.nguyen@example.com,TX,F,M,F,M,2
+1002342,Patel,Ravi,1991-09-03,1000,CA,SFO1,H,ANL-02,BW,,48.50,88 Market St,San Francisco,CA,94105,US,ravi.patel@example.com,CA,M,S,F,S,1
+1002343,Brooks,Elena,1985-01-22,1000,,ATL1,S,MGR-01,SM,115000,,,,,,US,elena.brooks@example.com,,F,M,F,M,3
